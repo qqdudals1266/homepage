@@ -5,18 +5,68 @@ export default function Contact() {
     hospital: "",
     name: "",
     phone: "",
+    region: "",
     department: "",
     concern: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+
+    try {
+      const body = `
+병원명: ${form.hospital}
+담당자명: ${form.name}
+연락처: ${form.phone}
+지역: ${form.region || "미입력"}
+진료과목: ${form.department || "미입력"}
+현재 고민: ${form.concern || "미입력"}
+      `.trim();
+
+      const response = await fetch("https://formspree.io/f/meevokey", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _replyto: "qqdudals87@naver.com",
+          email: "qqdudals87@naver.com",
+          subject: `[클리어마케팅] 무료 상담 신청 - ${form.hospital}`,
+          message: body,
+          병원명: form.hospital,
+          담당자명: form.name,
+          연락처: form.phone,
+          진료과목: form.department,
+          현재고민: form.concern,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        throw new Error("전송 실패");
+      }
+    } catch (err) {
+      // Formspree가 설정되지 않은 경우 mailto 폴백
+      const subject = encodeURIComponent(`[클리어마케팅] 무료 상담 신청 - ${form.hospital}`);
+      const body2 = encodeURIComponent(
+        `병원명: ${form.hospital}\n담당자명: ${form.name}\n연락처: ${form.phone}\n진료과목: ${form.department || "미입력"}\n현재 고민: ${form.concern || "미입력"}`
+      );
+      window.location.href = `mailto:qqdudals87@naver.com?subject=${subject}&body=${body2}`;
+      setSubmitted(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -26,7 +76,7 @@ export default function Contact() {
           <span className="inline-block text-primary text-sm font-semibold mb-3">Contact</span>
           <h2 className="section-title">문의하기</h2>
           <p className="section-sub max-w-xl mx-auto">
-            간단한 정보를 남겨주시면 담당자가 1영업일 이내 연락드립니다.<br />
+            간단한 정보를 남겨주시면 담당자가 48시간 이내 연락드립니다.<br />
             빠른 응대는 카카오톡을 이용해 주세요.
           </p>
         </div>
@@ -89,6 +139,19 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-neutral-700 mb-1.5">
+                    지역
+                  </label>
+                  <input
+                    type="text"
+                    name="region"
+                    value={form.region}
+                    onChange={handleChange}
+                    placeholder="예) 서울 강남구, 경기 수원시 등"
+                    className="w-full border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-neutral-700 mb-1.5">
                     진료과목
                   </label>
                   <input
@@ -113,8 +176,15 @@ export default function Contact() {
                     className="w-full border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all resize-none"
                   />
                 </div>
-                <button type="submit" className="btn-primary text-center mt-2">
-                  문의 접수하기
+                {error && (
+                  <p className="text-red-500 text-sm text-center">{error}</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={sending}
+                  className="btn-primary text-center mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {sending ? "전송 중..." : "문의 접수하기"}
                 </button>
               </form>
             )}
@@ -132,7 +202,7 @@ export default function Contact() {
                 평일 오전 9시 ~ 오후 6시 응대합니다.
               </p>
               <a
-                href="https://pf.kakao.com/_clearmarketing"
+                href="https://open.kakao.com/o/sCSydrqi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-kakao w-full justify-center"

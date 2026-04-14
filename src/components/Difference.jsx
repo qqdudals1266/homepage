@@ -1,8 +1,8 @@
 const rows = [
   {
-    category: "콘텐츠 방향",
-    large: "키워드 넣기 중심, 형식적 원고",
-    clear: "환자 심리 기반, 신뢰·문의 유도 구조",
+    category: "콘텐츠 기획 기준",
+    large: "업종 공통 템플릿이나 노출 중심 기획이 많음",
+    clear: "환자의 검색 의도와 실제 내원까지 고려",
   },
   {
     category: "의료 이해도",
@@ -19,6 +19,16 @@ const rows = [
     large: "장기 계약 강제, 위약금 조항 존재",
     clear: "월 단위 계약, 부담 없이 시작 가능",
   },
+  {
+    category: "키워드 전략",
+    large: "검색량이 높은 키워드 위주로 무리하게 접근하는 경우가 있음",
+    clear: "블로그 지수와 경쟁도에 맞춘 단계별 키워드 운용",
+  },
+  {
+    category: "장기 운영 관점",
+    large: "단기 발행량 중심으로 운영되는 경우가 있음",
+    clear: "병원이 온라인에서 신뢰를 쌓는 구조를 만드는 데 초점",
+  },
 ];
 
 export default function Difference() {
@@ -27,7 +37,7 @@ export default function Difference() {
       <div className="container-max">
         <div className="text-center mb-14">
           <span className="inline-block text-primary text-sm font-semibold mb-3">Why ClearMarketing</span>
-          <h2 className="section-title">대형 대행사와 무엇이 다른가요?</h2>
+          <h2 className="section-title">일반 대행사와 무엇이 다른가요?</h2>
           <p className="section-sub max-w-xl mx-auto">
             규모가 크다고 병원에 맞는 건 아닙니다.<br />
             클리어마케팅은 병원에 필요한 것에만 집중합니다.
@@ -37,9 +47,10 @@ export default function Difference() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-neutral-200">
-                <th className="py-4 px-5 text-left text-neutral-500 font-medium w-32">항목</th>
-                <th className="py-4 px-5 text-center text-neutral-400 font-medium">일반 대형 대행사</th>
-                <th className="py-4 px-5 text-center text-primary font-semibold bg-blue-50 rounded-tr-2xl">클리어마케팅</th>
+                <th className="w-[180px] whitespace-nowrap py-4 px-5 text-left text-neutral-500 font-medium w-32">항목</th>
+                <th className="py-4 px-5 text-center text-neutral-400 font-medium">일반 대행사</th>
+                
+                <th className="px-6 py-5 text-center bg-blue-100 text-blue-900 font-bold">클리어마케팅</th>
               </tr>
             </thead>
             <tbody>

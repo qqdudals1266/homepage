@@ -37,7 +37,7 @@ export default function Footer() {
                 <li>🌐 www.clearmk.co.kr</li>
                 <li className="pt-1">
                   <a
-                    href="https://pf.kakao.com/_clearmarketing"
+                    href="https://open.kakao.com/o/sCSydrqi"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-[#FEE500] text-[#3C1E1E] px-4 py-2 rounded-lg text-xs font-semibold hover:brightness-95 transition-all"
@@ -62,7 +62,7 @@ export default function Footer() {
             </button>
           </div>
           <div className="mt-4 text-xs text-neutral-700">
-            © 2024 클리어마케팅. All rights reserved.
+            © 2025 클리어마케팅. All rights reserved.
           </div>
         </div>
       </footer>
