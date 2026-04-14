@@ -8,6 +8,10 @@ html {
   scroll-behavior: smooth;
 }
 
+* {
+  cursor: none !important;
+}
+
 body {
   font-family: 'Noto Sans KR', sans-serif;
   color: #1E293B;
