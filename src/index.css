@@ -9,7 +9,15 @@ html {
 }
 
 * {
-  cursor: none !important;
+  cursor: default;
+}
+
+a, button, [role="button"], select {
+  cursor: pointer !important;
+}
+
+input, textarea {
+  cursor: default !important;
 }
 
 body {
