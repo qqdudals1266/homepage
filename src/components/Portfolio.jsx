@@ -1,21 +1,21 @@
 const samples = [
   {
-    tag: "정형외과",
-    title: "무릎 통증, 어느 병원에 가야 할까? 정형외과 vs 한의원 차이",
-    preview: "무릎 통증이 생겼을 때 많은 분들이 정형외과와 한의원 중 어디를 먼저 가야 할지 고민합니다. 이 글에서는 증상 유형별로 어떤 선택이 더 적합한지, 실제 진료 흐름을 기준으로 안내드립니다...",
-    metrics: { views: "3,240", rank: "3위" },
+    tag: "한의원",
+    title: "허리 통증, 오래 앉아 있을 수록 더 심해지는 이유",
+    preview: " 직장에서 오래 앉아 있다가 갑자기 일어설 때 허리가 곧바로 펴지지 않아 엉거주춤하게 서 있거나, 하루 일과를 마치고 나면 허리 아래쪽이 묵직하게 당겨오는 기분을 느껴본 적이 있으실 거예요...",
+    metrics: { rank: "3위" },
   },
   {
-    tag: "피부과",
-    title: "여드름 흉터 치료, 시기별로 달라지는 접근법",
-    preview: "여드름 흉터는 생긴 시기와 유형에 따라 치료 방법이 달라집니다. 초기 붉은 자국 단계부터 깊은 패인 흉터까지, 각 단계에서 어떤 시술이 효과적인지 정리해 드립니다...",
-    metrics: { views: "2,810", rank: "5위" },
+    tag: "치과",
+    title: "임플란트 기간, 예상보다 오래 걸리는 진짜 이유는 무엇일까요?",
+    preview: "치과 치료 중에서도 임플란트는 유독 ‘기다림’이 강조되는 치료입니다.  특히 고덕동 인근에서 임플란트를 준비하며 상담을 받아보신 분들 중에는 '생각보다 기간이 너무 긴데?'라며 당혹감을 느끼시는 경우가 적지 않습니다. .",
+    metrics: {  rank: "1위" },
   },
   {
-    tag: "내과",
-    title: "건강검진 후 '요관찰' 판정을 받았다면 다음 단계는?",
-    preview: "'요관찰'이란 당장 치료가 필요한 상태는 아니지만, 정기적인 경과 관찰이 필요하다는 의미입니다. 이 글에서는 요관찰 판정 이후 어떤 검사나 관리가 필요한지 안내드립니다...",
-    metrics: { views: "4,100", rank: "2위" },
+    tag: "동물병원",
+    title: "강아지 치아 발치, 망설여지는 마음 정말 이해됩니다",
+    preview: "얼마 전 보호자 한 분이 이런 상황을 말씀하신 적이 있습니다. 입 냄새는 심해지고 양치도 거부하는데, 치아를 빼야 한다고 들으니 쉽게 결정을 내리기 어렵다는 이야기였죠. 아마 지금 이 글을 읽고 계신 분도 비슷한 고민을 하고 계실 수 있어요...",
+    metrics: { rank: "2위" },
   },
 ];
 
@@ -40,7 +40,7 @@ export default function Portfolio() {
               <h3 className="font-bold text-neutral-800 text-base leading-snug">{s.title}</h3>
               <p className="text-sm text-neutral-500 leading-relaxed flex-1">{s.preview}</p>
               <div className="flex items-center gap-4 pt-3 border-t border-neutral-100 text-xs text-neutral-400">
-                <span>👁 {s.metrics.views} 조회</span>
+
                 <span>🔍 검색 {s.metrics.rank}</span>
               </div>
             </div>

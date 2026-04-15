@@ -43,13 +43,14 @@ export default function Difference() {
             클리어마케팅은 병원에 필요한 것에만 집중합니다.
           </p>
         </div>
-        <div className="overflow-x-auto rounded-2xl border border-neutral-200 bg-white shadow-sm">
+
+        {/* 데스크탑: 테이블 */}
+        <div className="hidden md:block overflow-x-auto rounded-2xl border border-neutral-200 bg-white shadow-sm">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-neutral-200">
-                <th className="w-[180px] whitespace-nowrap py-4 px-5 text-left text-neutral-500 font-medium w-32">항목</th>
+                <th className="w-[180px] whitespace-nowrap py-4 px-5 text-left text-neutral-500 font-medium">항목</th>
                 <th className="py-4 px-5 text-center text-neutral-400 font-medium">일반 대행사</th>
-                
                 <th className="px-6 py-5 text-center bg-blue-100 text-blue-900 font-bold">클리어마케팅</th>
               </tr>
             </thead>
@@ -71,6 +72,28 @@ export default function Difference() {
             </tbody>
           </table>
         </div>
+
+        {/* 모바일: 카드 */}
+        <div className="flex flex-col gap-4 md:hidden">
+          {rows.map((row, i) => (
+            <div key={i} className="rounded-2xl border border-neutral-200 bg-white shadow-sm overflow-hidden">
+              <div className="px-4 py-3 bg-neutral-50 border-b border-neutral-200">
+                <span className="font-bold text-neutral-800 text-sm">{row.category}</span>
+              </div>
+              <div className="grid grid-cols-2 divide-x divide-neutral-100">
+                <div className="px-4 py-4">
+                  <p className="text-xs text-neutral-400 font-medium mb-1.5">일반 대행사</p>
+                  <p className="text-sm text-neutral-500 leading-relaxed">{row.large}</p>
+                </div>
+                <div className="px-4 py-4 bg-blue-50/40">
+                  <p className="text-xs text-primary font-bold mb-1.5">클리어마케팅</p>
+                  <p className="text-sm text-neutral-700 font-medium leading-relaxed">{row.clear}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
