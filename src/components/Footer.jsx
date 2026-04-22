@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const [showPrivacy, setShowPrivacy] = useState(false);
@@ -19,14 +20,19 @@ export default function Footer() {
             <div>
               <div className="text-white font-medium text-sm mb-3">바로가기</div>
               <ul className="flex flex-col gap-2 text-sm">
-                {["소개", "서비스", "진행 방식", "포트폴리오", "FAQ", "문의하기"].map((item, i) => {
-                  const hrefs = ["#about", "#services", "#process", "#portfolio", "#faq", "#contact"];
-                  return (
-                    <li key={i}>
-                      <a href={hrefs[i]} className="hover:text-white transition-colors">{item}</a>
-                    </li>
-                  );
-                })}
+                {[
+                  { label: "소개", href: "/about" },
+                  { label: "서비스", href: "/services" },
+                  { label: "진행 방식", href: "/process" },
+                  { label: "포트폴리오", href: "/portfolio" },
+                  { label: "칼럼", href: "/column" },
+                  { label: "FAQ", href: "/faq" },
+                  { label: "문의하기", href: "/contact" },
+                ].map((item, i) => (
+                  <li key={i}>
+                    <Link to={item.href} className="hover:text-white transition-colors">{item.label}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>

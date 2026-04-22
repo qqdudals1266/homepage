@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const samples = [
   {
     tag: "한의원",
@@ -50,9 +52,9 @@ export default function Portfolio() {
           <p className="text-neutral-600 text-sm mb-4">
             실제 포트폴리오 및 진료과목별 샘플 원고는 상담 시 제공해 드립니다.
           </p>
-          <a href="#contact" className="btn-primary text-sm py-2.5 px-6">
+          <Link to="/contact" className="btn-primary text-sm py-2.5 px-6">
             샘플 요청하기
-          </a>
+          </Link>
         </div>
       </div>
     </section>
