@@ -54,18 +54,27 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-neutral-600">
+          <div className="flex flex-col gap-2 text-xs text-neutral-600">
             <div className="flex flex-wrap gap-x-4 gap-y-1">
               <span>상호명: 클리어마케팅</span>
               <span>대표자: 이영민</span>
               <span>사업자등록번호: 294-58-00945</span>
             </div>
-            <button
-              onClick={() => setShowPrivacy(true)}
-              className="underline hover:text-neutral-400 transition-colors"
-            >
-              개인정보처리방침
-            </button>
+            <div className="flex flex-wrap gap-x-4 gap-y-1">
+              <span>대표 서비스: 병원 블로그 마케팅 · 병원브랜드블로그 · 병원 콘텐츠 마케팅</span>
+            </div>
+            <div className="flex flex-wrap gap-x-4 gap-y-1">
+              <span>주소: 경기도 수원시 동수원로 448 101동 105호</span>
+              <a href="https://www.clearmk.co.kr" className="hover:text-neutral-400 transition-colors">홈페이지: www.clearmk.co.kr</a>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1">
+              <button
+                onClick={() => setShowPrivacy(true)}
+                className="underline hover:text-neutral-400 transition-colors"
+              >
+                개인정보처리방침
+              </button>
+            </div>
           </div>
           <div className="mt-4 text-xs text-neutral-700">
             © 2025 클리어마케팅. All rights reserved.
