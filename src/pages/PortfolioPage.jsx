@@ -1,6 +1,8 @@
+import { useEffect } from 'react'
 import Portfolio from '../components/Portfolio'
 
 export default function PortfolioPage() {
+  useEffect(() => { document.title = '클리어마케팅 포트폴리오 | 병원 블로그 운영 사례' }, [])
   return (
     <div className="pt-20">
       <div className="bg-gradient-to-br from-[#0d1b3e] to-[#1a3260] py-16 px-4 text-center">

@@ -1,7 +1,9 @@
+import { useEffect } from 'react'
 import Services from '../components/Services'
 import Contact from '../components/Contact'
 
 export default function ServicesPage() {
+  useEffect(() => { document.title = '클리어마케팅 서비스 | 병원브랜드블로그 운영 대행' }, [])
   return (
     <div className="pt-20">
       <div className="bg-gradient-to-br from-[#0d1b3e] to-[#1a3260] py-16 px-4 text-center">

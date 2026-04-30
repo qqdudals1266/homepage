@@ -1,6 +1,8 @@
+import { useEffect } from 'react'
 import FAQ from '../components/FAQ'
 
 export default function FAQPage() {
+  useEffect(() => { document.title = '클리어마케팅 FAQ | 병원 블로그 마케팅 자주묻는질문' }, [])
   return (
     <div className="pt-20">
       <div className="bg-gradient-to-br from-[#0d1b3e] to-[#1a3260] py-16 px-4 text-center">

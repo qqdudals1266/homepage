@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+
+User-agent: Yeti
+Allow: /
+
+
 Sitemap: https://www.clearmk.co.kr/sitemap.xml

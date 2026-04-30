@@ -1,7 +1,9 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { columns } from '../data/columns'
 
 export default function ColumnPage() {
+  useEffect(() => { document.title = '클리어마케팅 칼럼 | 병원마케팅 인사이트' }, [])
   return (
     <div className="pt-20">
       <div className="bg-gradient-to-br from-[#0d1b3e] to-[#1a3260] py-16 px-4 text-center">

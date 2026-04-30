@@ -1,6 +1,8 @@
+import { useEffect } from 'react'
 import Process from '../components/Process'
 
 export default function ProcessPage() {
+  useEffect(() => { document.title = '클리어마케팅 병원브랜드블로그 | 선택받는 콘텐츠 설계' }, [])
   return (
     <div className="pt-20">
       <div className="bg-gradient-to-br from-[#0d1b3e] to-[#1a3260] py-16 px-4 text-center">
